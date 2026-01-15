@@ -46,14 +46,14 @@ abstract contract BaseHook is IHook {
 
     /// @inheritdoc IHook
     /// @dev Override _beforeExecute to implement custom logic
-    function beforeExecute(HookParams calldata params) external onlyGotchipus returns (bytes4) {
+    function beforeExecute(HookParams calldata params) external virtual onlyGotchipus returns (bytes4) {
         _beforeExecute(params);
         return HOOK_SUCCESS;
     }
 
     /// @inheritdoc IHook
     /// @dev Override _afterExecute to implement custom logic
-    function afterExecute(HookParams calldata params) external onlyGotchipus returns (bytes4) {
+    function afterExecute(HookParams calldata params) external virtual onlyGotchipus returns (bytes4) {
         _afterExecute(params);
         return HOOK_SUCCESS;
     }
@@ -62,21 +62,13 @@ abstract contract BaseHook is IHook {
     /// @dev Override this function to add custom beforeExecute logic
     /// @dev Revert to prevent the execution from proceeding
     /// @param params The execution parameters
-    function _beforeExecute(HookParams calldata params) internal virtual {
-        // Silence unused variable warning
-        params;
-        revert HookNotImplemented();
-    }
+    function _beforeExecute(HookParams calldata params) internal virtual {}
 
     /// @notice Internal hook called after execution
     /// @dev Override this function to add custom afterExecute logic
     /// @dev Revert to revert the entire transaction
     /// @param params The execution parameters with results
-    function _afterExecute(HookParams calldata params) internal virtual {
-        // Silence unused variable warning
-        params;
-        revert HookNotImplemented();
-    }
+    function _afterExecute(HookParams calldata params) internal virtual {}
 }
 
 /// @title BeforeExecuteHook - Base contract for hooks that only run before execution
@@ -93,7 +85,7 @@ abstract contract BeforeExecuteHook is BaseHook {
     }
 
     /// @dev afterExecute is not supported in this hook type
-    function _afterExecute(HookParams calldata) internal pure override {
+    function afterExecute(HookParams calldata) external pure override returns (bytes4) {
         revert HookNotImplemented();
     }
 }
@@ -112,7 +104,7 @@ abstract contract AfterExecuteHook is BaseHook {
     }
 
     /// @dev beforeExecute is not supported in this hook type
-    function _beforeExecute(HookParams calldata) internal pure override {
+    function beforeExecute(HookParams calldata) external pure override returns (bytes4) {
         revert HookNotImplemented();
     }
 }
