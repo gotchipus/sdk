@@ -1,0 +1,53 @@
+{
+  "name": "@gotchipus/sdk",
+  "version": "1.0.0",
+  "description": "Official SDK for building Gotchipus Hooks - interfaces, base contracts, and utilities",
+  "license": "MIT",
+  "author": "GotchiLabs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gotchipus/sdk.git"
+  },
+  "homepage": "https://github.com/gotchipus/sdk#readme",
+  "bugs": {
+    "url": "https://github.com/gotchipus/sdk/issues"
+  },
+  "keywords": [
+    "gotchipus",
+    "hooks",
+    "solidity",
+    "ethereum",
+    "erc6551",
+    "nft",
+    "smart-contracts",
+    "web3"
+  ],
+  "files": [
+    "contracts/**/*.sol",
+    "README.md",
+    "LICENSE",
+    "foundry.toml",
+    "remappings.txt"
+  ],
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test",
+    "test:gas": "forge test --gas-report",
+    "test:coverage": "forge coverage",
+    "fmt": "forge fmt",
+    "lint": "forge fmt --check",
+    "clean": "forge clean",
+    "snapshot": "forge snapshot"
+  },
+  "peerDependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  },
+  "peerDependenciesMeta": {
+    "@openzeppelin/contracts": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
