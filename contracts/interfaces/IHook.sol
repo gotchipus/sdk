@@ -13,6 +13,7 @@ interface IHook {
     /// @param to The target address of the execution
     /// @param value The ETH value being sent
     /// @param selector The function selector being called (first 4 bytes of data)
+    /// @param hook The address of the hook contract currently being executed
     /// @param hookData The full calldata being executed
     /// @param success Whether the execution succeeded (only set in afterExecute)
     /// @param returnData The return data from execution (only set in afterExecute)
@@ -23,6 +24,7 @@ interface IHook {
         address to;
         uint256 value;
         bytes4 selector;
+        address hook;
         bytes hookData;
         bool success;
         bytes returnData;
