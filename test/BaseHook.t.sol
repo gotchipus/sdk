@@ -49,6 +49,7 @@ contract BaseHookTest is Test {
             to: address(0x456),
             value: 0.5 ether,
             selector: bytes4(0),
+            hook: address(hook),
             hookData: "",
             success: false,
             returnData: ""
@@ -69,6 +70,7 @@ contract BaseHookTest is Test {
             to: address(0x456),
             value: 2 ether,
             selector: bytes4(0),
+            hook: address(hook),
             hookData: "",
             success: false,
             returnData: ""
@@ -87,6 +89,7 @@ contract BaseHookTest is Test {
             to: address(0x456),
             value: 0.5 ether,
             selector: bytes4(0),
+            hook: address(hook),
             hookData: "",
             success: false,
             returnData: ""
@@ -116,6 +119,7 @@ contract BaseHookTest is Test {
             to: address(0x456),
             value: value,
             selector: bytes4(0),
+            hook: address(hook),
             hookData: "",
             success: false,
             returnData: ""

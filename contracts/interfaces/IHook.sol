@@ -29,7 +29,7 @@ interface IHook {
         bool success;
         bytes returnData;
     }
-
+    
     /// @notice Permissions that a hook declares it supports
     /// @param beforeExecute True if the hook implements beforeExecute
     /// @param afterExecute True if the hook implements afterExecute

@@ -1,12 +1,33 @@
-# Compiler files
-cache/
+# Dependencies
+node_modules/
+lib/
+
+# Foundry
 out/
+cache/
 broadcast/
 
-# Dotenv file
+# Coverage
+lcov.info
+coverage/
+
+# Environment
 .env
+.env.local
+.env.*.local
 
-# mac
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+Thumbs.db
 
-node_modules/
+# Logs
+*.log
+
+# Gas snapshots
+.gas-snapshot

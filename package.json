@@ -1,6 +1,6 @@
 {
   "name": "@gotchipus/sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official SDK for building Gotchipus Hooks - interfaces, base contracts, and utilities",
   "license": "MIT",
   "author": "GotchiLabs",
